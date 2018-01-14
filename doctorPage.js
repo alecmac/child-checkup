@@ -55,6 +55,8 @@ dbRef.on('value', snap => {
 
     if(status == "help") {
       document.getElementById('devicec' + i).style.background = "#A30606";
+    } else {
+      document.getElementById('devicec' + i).style.background = "#FFF";    
     }
   }
 
