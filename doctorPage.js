@@ -18,11 +18,14 @@ btnLogin.addEventListener('click', e => {
   // Sign in
   const promise = auth.signInWithEmailAndPassword(email,password);
   promise.catch(e => console.log(e.message));
+  statusView();
+
 });
 
 $("a.logout").click(function() {
   firebase.auth().signOut();
-})
+  statusView();
+});
 
 // real-time listener
 firebase.auth().onAuthStateChanged(firebaseUser => {
@@ -36,6 +39,7 @@ firebase.auth().onAuthStateChanged(firebaseUser => {
     login_inputs.classList.remove('hide');
     child_status.classList.add('hide');
     logoutOption.classList.add('hide');
+
   }
 });
 
@@ -61,3 +65,21 @@ dbRef.on('value', snap => {
   }
 
 });
+
+function statusView() {
+  if ($('body').css("background-image") != "none") {
+      $('body').css("background-image", "none");
+      $('#main').css("height", "auto");
+      $(".login-layout").addClass('hide');
+
+      $('#main').css("background-color", "#f1f1f1");
+
+  } else {
+      $('body').css("background-image", 'url("./assets/Background.png")');
+      $('#main').css("background-color", "rgba(255,255,255,0.58)");
+      $('#main').css("height", "auto");
+      $(".login-layout").removeClass('hide');
+
+
+  }
+}

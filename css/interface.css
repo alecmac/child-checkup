@@ -61,6 +61,11 @@ h1 {
     background-color: white;
 }
 
+#child_status div.container {
+    background-color: white;
+    width: auto;
+}
+
 #history .card {
     background-color: #fff;
     width: 100%;
