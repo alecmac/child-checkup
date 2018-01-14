@@ -57,12 +57,17 @@ function populateInfo() {
 function statusView() {
     if ($('body').css("background-image") == "none") {
         $('body').css("background-image", "none");
+        $('#main').css("height", "40%");
+
         $('#main').css("background-color", "#f1f1f1");
 
     } else {
         $('body').css("background-image", 'url("../assets/bgx2.png")');
         $('#main').css("background-color", "rgba(255,255,255,0.58)");
         $('#main').css("background-color", "#f1f1f1");
+        $('#main').css("height", "auto");
+
+        
 
 
 

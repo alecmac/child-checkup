@@ -2,43 +2,15 @@
 <html lang="en">
   <head>
 
-    <title> Child Checkup </title>
+    <title>MediFeel</title>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
-    <style>
 
-      .navbar {
-        margin-bottom: 0;
-        border-radius: 0;
-        color: #FFF;
-        background: #1A1A1A;
-        padding: 0.5% 0;
-        font-size: 1.2em;
-        border: 0;
-      }
-
-      .text-center {
-        text-align: center;
-      }
-      /* .navbar-brand {
-        float: left;
-        padding: 0 15px 15px;
-        min-height: 55px;
-      } */
-      .navbar-inverse .navbar-nav .active a, .navbar-inverse .navbar-nav a:focus,
-      .navbar-inverse .navbar-nav .active a:hover {
-        color: #FFF;
-        background-color: #1A1A1A;
-      }
-      .navbar-inverse .navbar-nav li a {
-        color: #A5A5A5;
-      }
-
-    </style>
+    <link rel="stylesheet" href="./css/interface.css">
 
   </head>
   <body BGCOLOR="#E5E5E5">
@@ -52,7 +24,7 @@
             <span class="icon-bar"></span>
           </button>
           <!-- remove navbar-brand if not using a picture -->
-          <a class="navbar-brand" href="index.html" style="font-size:1.2em; color:#F2F2F2">Child Checkup</a>
+          <a class="navbar-brand" href="index.html"><img src="./assets/MediFeel3.svg" class="icon"></a>
         </div>
         <div class="collapse navbar-collapse" id="myNavbar">
           <ul class="nav navbar-nav navbar-right">
@@ -64,10 +36,12 @@
       </div>
     </nav>
 
-    <div class="container">
+    <div id="main" class="container">
 
-
-      <h1 class="text-center">Login</h1>
+        <div class=" index">
+            <img src="./assets/MediFeel.svg" alt="">
+          </div>
+      <p class="text-center">Welcome to MediFeel, an effective way for parents, doctors and nurses, and children to communicate effectively and feel secure during a child's long hospital stay.</p>
 
       <hr>
 
@@ -76,8 +50,8 @@
         <button id="parentBtn" class="btn btn-primary" onclick="location.href='parentPage.html';">PARENT</button>
         <button id="doctorBtn" class="btn btn-primary" onclick="location.href='doctorPage.html';">DOCTOR</button>
         <button id="doctorBtn" class="btn btn-primary" onclick="location.href='childPage.html';">CHILD</button>
-
       </div>
+      <a href="#">Need help?</a>
 
     </div>
 
