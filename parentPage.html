@@ -5,6 +5,7 @@
     <title> Child Checkup </title>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="./css/style.css">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
@@ -76,7 +77,14 @@
       <!-- child status form -->
       <div id="child_status" style="padding-left:10px">
 
-        <h4 id="status"> Child Status: </h4>
+        <div class="card template">
+          <div class="container">
+            <h4><b>Child Name:</b> <span id="cardName"></span></h4>
+            <p><b>Room Number:</b> <span id="cardRoom"></span></p>
+            <p><b>Device Number:</b> <span id="cardNum"></span></p>
+            <h4><p><b>Status:</b> <span id="cardStatus"></span></p></h4>
+          </div>
+        </div>
 
       </div>
       <!-- end of child status form -->
@@ -84,6 +92,10 @@
     </div>
 
   </body>
+  <script
+  src="https://code.jquery.com/jquery-3.2.1.min.js"
+  integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4="
+  crossorigin="anonymous"></script>
 
   <script src="https://www.gstatic.com/firebasejs/4.8.1/firebase.js"></script>
   <script src="firebaseInit.js"></script>
