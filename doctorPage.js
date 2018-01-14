@@ -2,7 +2,7 @@
 const txtEmail = document.getElementById('txtEmail');
 const txtPassword = document.getElementById('txtPassword');
 const btnLogin = document.getElementById('btnLogin');
-const btnLogout = document.getElementById('btnLogout');
+const logoutOption = document.getElementById('logoutOption');
 
 const login_inputs = document.getElementById('login_inputs');
 const child_status = document.getElementById('child_status');
@@ -20,23 +20,22 @@ btnLogin.addEventListener('click', e => {
   promise.catch(e => console.log(e.message));
 });
 
-// listener for logout button
-btnLogout.addEventListener('click', e => {
+$("a.logout").click(function() {
   firebase.auth().signOut();
-});
+})
 
 // real-time listener
 firebase.auth().onAuthStateChanged(firebaseUser => {
   if(firebaseUser) {
     console.log(firebaseUser);
-    btnLogout.classList.remove('hide');
+    logoutOption.classList.remove('hide');
     login_inputs.classList.add('hide');
     child_status.classList.remove('hide')
   } else {
     console.log('not logged in');
-    btnLogout.classList.add('hide');
     login_inputs.classList.remove('hide');
     child_status.classList.add('hide');
+    logoutOption.classList.add('hide');
   }
 });
 
@@ -45,10 +44,12 @@ dbRef.on('value', snap => {
     var name = snap.val()[i].name;
     var room = snap.val()[i].room;
     var status = snap.val()[i].status;
+    var time = snap.val()[i].time;
 
     document.getElementById('device' + i).innerHTML =
         "<b>Child Name:</b> " + name +
         "<br><b>Status:</b> " + status +
+        "<br><b>Time Updated:</b> " + time +
         "<br><b>Room Number:</b> " + room +
         "<br><b>Device Number:</b> " + i;
 
