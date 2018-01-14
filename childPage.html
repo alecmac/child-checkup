@@ -13,27 +13,114 @@
 	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.3/js/bootstrap.min.js" integrity="sha384-a5N7Y/aK3qNeh15eJKGWxsqtnX/wWdSZSKp+81YjTmS15nvnvxKHuzaWwXHDli+4" crossorigin="anonymous"></script>
 
 	<!-- Additional CSS -->
+	<link rel="stylesheet" type="text/css" href="css/child.css" />
 	<!-- TODO -->
 
 	<!-- Rendering JS -->
-	<!-- TODO -->
-
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+	<script src="js/childpage.js"></script>
   </head>
 
 
-  <body>
+  <body class="child-body">
     <nav class="navbar navbar-dark bg-dark">
 		<!-- Navbar content -->
 		<a class="navbar-brand" href="childPage.html">Child Checkup</a>
+		<ul class="navbar-nav" id="logout-button" style="display: none">
+			<li class="nav-item active">
+				<button class="btn btn-outline-light" onclick="logout()">Log out</button>
+			</li>
+		</ul>
 	</nav>
 
-    <div class="container" onload="getUI()">
-		<!-- Replace everything inside here with Javascript/React JS that renders that page based on login status -->
+    <div class="container">
+		<!-- Alerts -->
+		<div class="alert alert-success" role="alert" id="init-success" style="display:none">
+			Initialization successful!
+		</div>
+		<div class="alert alert-danger" role="alert" id="init-failure" style="display:none">
+			Initialization failed. Refresh the page and try again.
+		</div>
+		<div class="alert alert-danger" role="alert" id="status-failure" style="display:none">
+			Initialization failed. Refresh the page and try again.
+		</div>
+		<div class="alert alert-success" role="alert" id="status-success" style="display:none">
+			Updated status successfully.
+		</div>
+		<div class="alert alert-success" role="alert" id="logout-success" style="display:none">
+			You have been logged out successfully.
+		</div>
+
+		<!-- Enter device number -->
+		<div id="child-login">
+			<h1>Some information is needed...</h1>
+			<form>
+				<div class="form-group">
+					<label for="device-num">Device number</label>
+					<input type="text" class="form-control" id="device-num" required="required">
+					
+					<label for="child-name">Patient name</label>
+					<input type="text" class="form-control" id="child-name" required="required">
+					
+					<label for="room-num">Room number</label>
+					<input type="text" class="form-control" id="room-num" required="required">
+				</div>
+			</form>
+			
+			<button class="btn btn-outline-light" onclick="savePatientInfo()">Submit</button>
+		</div>
+		
+		<!-- Status update form -->
+		<div id="child-status-form" style="display: none">
+			<h1>How are you feeling?</h1>
+			<div class="row feeling-buttons">
+				<div class="col-sm-4">
+					<button type="button" class="btn btn-light feelings" onclick="updateChildStatus('okay')">
+						<img src="images/happy.svg" width="100%">
+					</button>
+				</div>
+				
+				<div class="col-sm-4">
+					<button type="button" class="btn btn-light feelings" onclick="updateChildStatus('neutral')">
+						<img src="images/neutral.svg" width="100%">
+					</button>
+				</div>
+				
+				<div class="col-sm-4">
+					<button type="button" class="btn btn-light feelings" onclick="updateChildStatus('sad')">
+						<img src="images/sad.svg" width="100%">
+					</button>
+				</div>
+			</div>
+			<hr/>
+			<h3>Do you also want to...</h3>
+			<div class="row feeling-buttons">
+				<div class="col-sm">
+					<button type="button" class="btn btn-outline-danger nurse" onclick="toggleNurse()" id="nurse-alert">
+						<div id="nurse-text">Alert a<br/>nurse</div>
+					</button>
+				</div>
+			</div>
+		</div>
+		
+		<div id="message-parent-form" style="display: none">
+			<h1>Message mom or dad</h1>
+			
+			<div class="form-group">
+				<label for="mom-form">What do you want tell mom or dad?</label>
+				<textarea class="form-control" rows="5" id="mom-form"></textarea>
+			</div>
+			
+			<button type="button" class="btn btn-primary" onclick="submitParentSend()">Send</button>
+			<button type="button" class="btn btn-outline-danger" onclick="cancelParentSend()">Cancel</button>
+		</div>
+		
     </div>
 
   </body>
 
   <!-- Firebase scripts -->
+  
 	<script src="https://www.gstatic.com/firebasejs/4.8.1/firebase.js"></script>
 	<script src="firebaseInit.js"></script>
 	<script src="index.js"></script>
