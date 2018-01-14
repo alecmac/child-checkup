@@ -20,6 +20,13 @@
         font-size: 1.2em;
         border: 0;
       }
+      .card {
+        box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
+        transition: 0.3s;
+      }
+      .card:hover {
+        box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2);
+      }
       /* .navbar-brand {
         float: left;
         padding: 0 15px 15px;
@@ -62,7 +69,6 @@
 
     <div class="container">
 
-
       <h1>
         Doctor Login
         <button id="btnLogout" class="btn btn-default hide" style="float: right">Log out</button>
@@ -85,7 +91,7 @@
         <br>
         <button id="btnLogin" class="btn btn-action">Log in</button>
         <br>
-        <a href="childPage.html" style="font-size:12px"> <i>Not a parent? Go to child page.</i> </a>
+        <a href="index.html" style="font-size:12px"> <i>Not a doctor? Go to back.</i> </a>
 
       </div>
       <!-- end of login form -->
@@ -93,7 +99,14 @@
       <!-- child status form -->
       <div id="child_status" style="padding-left:10px">
 
-        <h4 id="status"> Child Status: </h4>
+        <div class="card">
+          <div class="container">
+            <h4><b>Child Name:</b> John</h4>
+            <p><b>Room Number:</b> 1</p>
+            <p><b>Device Number:</b> 10</p>
+            <h4><p><b>Status:</b> SAD</p></h4>
+          </div>
+        </div>
 
       </div>
       <!-- end of child status form -->

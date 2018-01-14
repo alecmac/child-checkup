@@ -3,7 +3,7 @@ const txtEmail = document.getElementById('txtEmail');
 const txtPassword = document.getElementById('txtPassword');
 const btnLogin = document.getElementById('btnLogin');
 const btnLogout = document.getElementById('btnLogout');
-const statusHeader = document.getElementById('status');
+// const statusHeader = document.getElementById('status');
 
 const login_inputs = document.getElementById('login_inputs');
 const child_status = document.getElementById('child_status');
@@ -41,6 +41,6 @@ firebase.auth().onAuthStateChanged(firebaseUser => {
   }
 });
 
-dbRef.on('value', snap => {
-  statusHeader.innerHTML = "Child Status: " + snap.val().status;
-});
+// dbRef.on('value', snap => {
+//   statusHeader.innerHTML = "Child Status: " + snap.val().status;
+// });
