@@ -1,19 +1,79 @@
+body {
+    background-image: url("../assets/bgx2.png");
+    background-repeat: no-repeat;
+    background-size: 100%;
+    font-family: 'Roboto', sans-serif;
+}
+
+.nav.navbar-nav.navbar-right a{
+    text-transform: uppercase;
+    font-family: 'Roboto', sans-serif;
+    color: white;
+}
+
+.title {
+    margin: 10px;
+    width: auto;
+    text-align: left;
+    border-bottom: 2px solid #0098c1;
+}
+
+h1 {
+    font-weight: medium;
+    font-size: 20px;
+    width: auto;
+}
+.icon {
+    height: 45%;
+    position: absolute;
+    width:
+}
+
+#main {
+    top: 100px;
+    position: relative;
+    background-color: rgba(255,255,255,0.58);
+    width: 70%;
+    height: 450px;
+    margin: 0 auto;
+    display: block;
+    bottom: 100px;
+}
+
+
+.left {
+    text-align: center;
+    padding: 7% 0 0 0;
+
+}
+
+.left img {
+    width: 60%;
+}
+.right {
+    text-align: left;
+}
+
+
+
 .navbar {
     margin-bottom: 0;
     border-radius: 0;
     color: #FFF;
-    background: #1A1A1A;
+    background: #0098c1;
     padding: 0.5% 0;
     font-size: 1.2em;
     border: 0;
   }
   .card {
-    box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
+    
+    box-shadow: 0 2px 11px 3 rgba(0,0,0,0.09);
     transition: 0.3s;
   }
   .card:hover {
-    box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2);
+    box-shadow: 0 8px 16px 0 rgba(0,0,0,0.1);
   }
+  
   /* .navbar-brand {
     float: left;
     padding: 0 15px 15px;
@@ -22,12 +82,19 @@
   .navbar-inverse .navbar-nav .active a, .navbar-inverse .navbar-nav a:focus,
   .navbar-inverse .navbar-nav .active a:hover {
     color: #FFF;
-    background-color: #1A1A1A;
+    background-color: #0098c1;
   }
   .navbar-inverse .navbar-nav li a {
     color: #A5A5A5;
   }
 
-  #child_status .col-sm-4 {
-      padding: 20px 0;
+  #child_status .col-sm-3 {
+      padding: 1.5em;
+      margin: 1.2em;
+  }
+
+  @media (min-width:768px) {
+    .icon {
+        left: inherit;
+    }
   }

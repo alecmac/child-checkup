@@ -35,7 +35,7 @@ function populateInfo() {
     child_status.classList.remove('hide')
     btnLogout.classList.remove('hide');
 
-    var $infoTemplate = $('.card.hide').clone();
+    var $infoTemplate = $('#child_status .container.hide').clone();
     $infoTemplate.find("#cardName").text(childName);
     $infoTemplate.find("#cardRoom").text(childRoom);
     $infoTemplate.find("#cardNum").text(deviceNum);
