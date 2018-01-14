@@ -1,41 +1,66 @@
+h4{
+	color: #FFF;
+}
+label{
+	color: #FFF;
+}
 .child-body{
+	background-color: #0098c1;
+	font-family: 'Roboto', sans-serif;
+}
+.bg-blue{
 	background-color: #0098c1;
 }
 .container{
 	padding-top: 15px;
 }
+#logo{
+	height: 35px;
+	margin-top: -7px;
+	margin-left: -2px;
+}
 .feelings{
 	border-radius: 50%;
 	border: none;
 	margin: 20px;
-	width: 200px;
+	width: 150px;
+	height: 150px;
 	max-width: 100%;
 	text-align: center;
+	box-shadow: 0px 2px 11px 3px rgba(0,123,156,9);
 }
 .nurse{
-	height: 200px;
+	height: 150px;
 	max-height: 100%;
-	width: 200px;
+	width: 150px;
 	max-width: 100%;
 	text-align: center;
 	border-radius: 50%;
 	border: none;
-	background-color: #FFF;
 }
 .feeling-buttons{
+	padding-top: 25px;
+	padding-bottom: 25px;
 	text-align: center;
 }
 .feelings img{
 	width: 100%;
-	max-width: 200px;
-	padding: 7%;
+	max-width: 150px;
+	padding: 20%;
 }
 #nurse-alert{
-	font-size: 20pt;
+	font-size: 14pt;
+	background-color: #005e78;
+	box-shadow: 0px 2px 11px 3px rgba(0,123,156,9);
+	
 }
-/*
-@media (min-width:768px) {
-	.feelings{
-		
+
+@media screen and (min-width: 576px) {
+	.container{
+		max-width: 540px;
 	}
-}*/
+	.feelings{
+		height: 150px;
+		width: 150px;
+	}
+}

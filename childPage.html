@@ -6,6 +6,9 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
+	<!-- Custom Font -->
+	<link href="https://fonts.googleapis.com/css?family=Roboto:400,500,700" rel="stylesheet">
+	
 	<!-- Bootstrap -->
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.3/css/bootstrap.min.css" integrity="sha384-Zug+QiDoJOrZ5t4lssLdxGhVrurbmBWopoEl+M6BdEfwnCJZtKxi1KgxUyJq13dy" crossorigin="anonymous">
 	<script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
@@ -14,7 +17,6 @@
 
 	<!-- Additional CSS -->
 	<link rel="stylesheet" type="text/css" href="css/child.css" />
-	<!-- TODO -->
 
 	<!-- Rendering JS -->
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
@@ -23,9 +25,9 @@
 
 
   <body class="child-body">
-    <nav class="navbar navbar-dark bg-dark">
+    <nav class="navbar navbar-dark bg-blue">
 		<!-- Navbar content -->
-		<a class="navbar-brand" href="childPage.html">Child Checkup</a>
+		<a class="navbar-brand" href="childPage.html"><img src="images/MediFeel3.svg" id="logo"></a>
 		<ul class="navbar-nav" id="logout-button" style="display: none">
 			<li class="nav-item active">
 				<button class="btn btn-outline-light" onclick="logout()">Log out</button>
@@ -47,23 +49,29 @@
 		<div class="alert alert-success" role="alert" id="status-success" style="display:none">
 			Updated status successfully.
 		</div>
+		<div class="alert alert-success" role="alert" id="nurse-success" style="display:none">
+			A nurse has been notified and will be with you soon.
+		</div>
+		<div class="alert alert-danger" role="alert" id="nurse-failure" style="display:none">
+			There was a problem processing your request. Please try again.
+		</div>
 		<div class="alert alert-success" role="alert" id="logout-success" style="display:none">
 			You have been logged out successfully.
 		</div>
 
 		<!-- Enter device number -->
 		<div id="child-login">
-			<h1>Some information is needed...</h1>
-			<form>
+			<h4>Some information is needed...</h4>
+			<form id="init-child">
 				<div class="form-group">
 					<label for="device-num">Device number</label>
-					<input type="text" class="form-control" id="device-num" required="required">
+					<input type="text" class="form-control" id="device-num">
 					
 					<label for="child-name">Patient name</label>
-					<input type="text" class="form-control" id="child-name" required="required">
+					<input type="text" class="form-control" id="child-name">
 					
 					<label for="room-num">Room number</label>
-					<input type="text" class="form-control" id="room-num" required="required">
+					<input type="text" class="form-control" id="room-num">
 				</div>
 			</form>
 			
@@ -72,10 +80,10 @@
 		
 		<!-- Status update form -->
 		<div id="child-status-form" style="display: none">
-			<h1>How are you feeling?</h1>
+			<h4>Today I feel...</h4>
 			<div class="row feeling-buttons">
 				<div class="col-sm-4">
-					<button type="button" class="btn btn-light feelings" onclick="updateChildStatus('okay')">
+					<button type="button" class="btn btn-light feelings" onclick="updateChildStatus('happy')">
 						<img src="images/happy.svg" width="100%">
 					</button>
 				</div>
@@ -92,37 +100,22 @@
 					</button>
 				</div>
 			</div>
-			<hr/>
-			<h3>Do you also want to...</h3>
+
+			<h4>I need a nurse to come help me...</h4>
 			<div class="row feeling-buttons">
 				<div class="col-sm">
-					<button type="button" class="btn btn-outline-danger nurse" onclick="toggleNurse()" id="nurse-alert">
-						<div id="nurse-text">Alert a<br/>nurse</div>
+					<button type="button" class="btn btn-primary nurse" onclick="updateChildStatus('help')" id="nurse-alert">
+						<div id="nurse-text">Call for help!</div>
 					</button>
 				</div>
 			</div>
 		</div>
-		
-		<div id="message-parent-form" style="display: none">
-			<h1>Message mom or dad</h1>
-			
-			<div class="form-group">
-				<label for="mom-form">What do you want tell mom or dad?</label>
-				<textarea class="form-control" rows="5" id="mom-form"></textarea>
-			</div>
-			
-			<button type="button" class="btn btn-primary" onclick="submitParentSend()">Send</button>
-			<button type="button" class="btn btn-outline-danger" onclick="cancelParentSend()">Cancel</button>
-		</div>
-		
     </div>
-
   </body>
 
   <!-- Firebase scripts -->
-  
-	<script src="https://www.gstatic.com/firebasejs/4.8.1/firebase.js"></script>
-	<script src="firebaseInit.js"></script>
-	<script src="index.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/4.8.1/firebase.js"></script>
+  <script src="firebaseInit.js"></script>
+  <script src="index.js"></script>
   
 </html>
