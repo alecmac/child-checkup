@@ -34,29 +34,36 @@
                     <li><a href="index.html">Home</a></li>
                     <li><a href="#">About</a></li>
                     <li><a href="#">Contact Us</a></li>
+                    <li class="hide" id="btnLogout"><a href="">Log Out</a></li> 
                 </ul>
             </div>
         </div>
         </div>
     </nav>
 
+    <!-- main module -->
     <div class="container" id="main">
 
-      <div class="container col-sm-4 left">
+      <!-- login layout (3 col) -->
+      <div class="container col-sm-4 left login-layout">
         <img src="./assets/MediFeel.svg" alt="">
       </div>
 
-      <div class="container col-sm-4 right">
+      <div class="container col-sm-4 right login-layout">
           <div class="title">
               <h1>Parent Portal</h1>
           </div>
+          <p>
+            Lorem ipsum dolor si enumerus vitae caeso. Dia amolialus totalis aequum filius.
+          </p>
            <!-- login form -->
-        <div id="login_inputs" style="padding-left:10px">
+        <div id="login_inputs" style="padding-left:10px login-layout">
             <button id="btnLogout" class="btn btn-default hide" style="float: right">Log out</button>
 
             <div class="input-group" style="max-width:300px">
-                <span class="input-group-addon"><i class="glyphicon glyphicon-phone"></i></span>
                 <input id="deviceNumber" class="form-control" placeholder="Device Number">
+                <label for="deviceNumber">Enter Device Number</label>
+
             </div>
 
             <br>
@@ -67,23 +74,41 @@
 
         </div>
       </div>  
-
-        
-
-       
         <!-- end of login form -->
 
         <!-- child status form -->
-        <div id="child_status" style="padding-left:10px">
+        <div id="child_status">
+          
 
             <div class="container hide">
-                <div class="container card col-sm-3"><b>Child Name:</b> <span id="cardName"></span></div>
-                <div class="container card col-sm-3"><b>Room Number:</b> <span id="cardRoom"></span></div>
-                <div class="container card col-sm-3"><b>Status:</b> <span id="cardStatus"></span></div>
+                <div class="title">
+                    <h1>Parent Portal</h1>
+                </div>
+                <div class="container card col-sm-12">Today, <span id="cardName"></span> is <span id="textStatus"></span></div>
+                <div class="container card col-sm-12"><span id="cardStatus"></span></div>
+                <div class="container card col-sm-12"><span id="cardTime"></span></div>
             </div>
 
         </div>
         <!-- end of child status form -->
+        <!-- history display -->
+        <div id="history" class="hide">
+            <div class="title">
+                <h1>History</h1>
+            </div>
+            <div class="container card">
+                <div class="container card col-sm-12">Tim was happy</div>
+                <div class="container card col-sm-12">09:56 AM January 4, 2018</div>
+            </div>
+            <div class="container card">
+                <div class="container card col-sm-12">Tim was neutral</div>
+                <div class="container card col-sm-12">05:40 PM January 1, 2018</div>
+            </div>
+            <div class="container card">
+                <div class="container card col-sm-12">Tim was sad</div>
+                <div class="container card col-sm-12">11:21 AM December 29, 2017</div>
+            </div>
+        </div>
 
     </div>
 

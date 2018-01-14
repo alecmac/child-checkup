@@ -3,6 +3,8 @@ body {
     background-repeat: no-repeat;
     background-size: 100%;
     font-family: 'Roboto', sans-serif;
+    color: #393939;
+    background-color: #fff;
 }
 
 .nav.navbar-nav.navbar-right a{
@@ -26,7 +28,7 @@ h1 {
 .icon {
     height: 45%;
     position: absolute;
-    width:
+
 }
 
 #main {
@@ -34,12 +36,29 @@ h1 {
     position: relative;
     background-color: rgba(255,255,255,0.58);
     width: 70%;
-    height: 450px;
+    height: 100%;
     margin: 0 auto;
     display: block;
     bottom: 100px;
 }
 
+#child_status {
+    height: auto;
+}
+
+#child_status .title, #history .title{
+    width: 200px;
+}
+
+#child_status .col-sm-12 {
+    background-color: white;
+}
+
+#history .card {
+    background-color: #fff;
+    width: 100%;
+    margin: 10px 0;
+}
 
 .left {
     text-align: center;
@@ -49,12 +68,33 @@ h1 {
 
 .left img {
     width: 60%;
+    max-width: 100px;
+
 }
 .right {
     text-align: left;
 }
 
+input[type="text"]
+{
+    background: transparent;
+    border: none;
+}
 
+.form-control:focus {
+    border-color: white;
+    box-shadow: inset 0 0 1px rgba(0, 0, 0, 0.075), 0 0 8px rgba(255, 255, 255, 0.6);
+  }
+
+  #deviceNumber {
+    background: transparent;
+    color: #393939;
+    border: 0;
+    border-bottom: 1.5px black solid;
+  }
+.appended {
+    width: 100%;
+}
 
 .navbar {
     margin-bottom: 0;
@@ -62,7 +102,7 @@ h1 {
     color: #FFF;
     background: #0098c1;
     padding: 0.5% 0;
-    font-size: 1.2em;
+    font-size: 16px;
     border: 0;
   }
   .card {
@@ -88,13 +128,10 @@ h1 {
     color: #A5A5A5;
   }
 
-  #child_status .col-sm-3 {
-      padding: 1.5em;
-      margin: 1.2em;
-  }
+  #child_status div.col-sm-12 {
+      text-align: center;
+      vertical-align: center;
+      padding: 20px 0;
+}
 
-  @media (min-width:768px) {
-    .icon {
-        left: inherit;
-    }
-  }
+ 
