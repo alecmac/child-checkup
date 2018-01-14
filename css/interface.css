@@ -1,10 +1,16 @@
+html {
+    margin: 0;
+    height: 100%;
+}
 body {
     background-image: url("../assets/bgx2.png");
     background-repeat: no-repeat;
-    background-size: 100%;
+    background-size: auto 100%;
     font-family: 'Roboto', sans-serif;
     color: #393939;
     background-color: #fff;
+    margin: 0;
+    height: 100%;
 }
 
 .nav.navbar-nav.navbar-right a{
@@ -36,10 +42,11 @@ h1 {
     position: relative;
     background-color: rgba(255,255,255,0.58);
     width: 70%;
-    height: 100%;
+    height: auto;
     margin: 0 auto;
     display: block;
     bottom: 100px;
+    padding-bottom: 10px;
 }
 
 #child_status {
@@ -96,6 +103,11 @@ input[type="text"]
     width: 100%;
 }
 
+.index {
+    text-align: center;
+    padding: 20px 0;
+}
+
 .navbar {
     margin-bottom: 0;
     border-radius: 0;
@@ -136,7 +148,7 @@ input[type="text"]
 
  
 
-@media (max-width: 768) {
+@media (min-width: 768) {
     body {
         background-image:none;
     }
