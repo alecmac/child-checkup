@@ -107,16 +107,6 @@ function updateChildStatus(child_status)
 }
 
 function logout(){
-	var form_object = document.forms['init-child'];
-	var device_num = form_object.elements["device-num"].value;
-	var patient_name = form_object.elements['child-name'].value;
-	var room_num = form_object.elements['room-num'].value;
-	
-	// Wipe out old data. Does not actually work.
-	device_num = '';
-	patient_name = '';
-	room_num = '';
-	
 	document.getElementById('child-login').style.display = 'block';
 	document.getElementById('child-status-form').style.display = 'none';
 	document.getElementById('logout-button').style.display = 'none';
