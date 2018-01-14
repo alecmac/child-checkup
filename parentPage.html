@@ -53,6 +53,7 @@
 
       <h1>
         Parent Login
+        <button id="btnLogout" class="btn btn-default hide" style="float: right">Log out</button>
       </h1>
 
       <hr>
@@ -67,7 +68,7 @@
 
         <br>
 
-        <button id="btnLogin" class="btn btn-action" onclick="getDeviceNum();">Log in</button>
+        <button id="btnLogin" class="btn btn-primary" onclick="getDeviceNum();">Log in</button>
         <br>
         <a href="index.html" style="font-size:12px"> <i>Not a parent? Go back.</i> </a>
 
@@ -77,12 +78,11 @@
       <!-- child status form -->
       <div id="child_status" style="padding-left:10px">
 
-        <div class="card template">
+        <div class="card hide">
           <div class="container">
-            <h4><b>Child Name:</b> <span id="cardName"></span></h4>
-            <p><b>Room Number:</b> <span id="cardRoom"></span></p>
-            <p><b>Device Number:</b> <span id="cardNum"></span></p>
-            <h4><p><b>Status:</b> <span id="cardStatus"></span></p></h4>
+            <div class="container col-sm-4"><b>Child Name:</b> <span id="cardName"></span></div>
+            <div class="container col-sm-4"><b>Room Number:</b> <span id="cardRoom"></span></div>
+            <div class="container col-sm-4"><b>Status:</b> <span id="cardStatus"></span></div>
           </div>
         </div>
 
