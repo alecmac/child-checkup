@@ -8,21 +8,22 @@ const child_status = document.getElementById('child_status');
 var deviceNum = 0;
 var dbRef = firebase.database().ref().child('devices');
 
+
 function getDeviceNum() {
 
     deviceNum = deviceNumber.value;
     console.log(deviceNum);
-    // dbRef = firebase.database().ref().child('devices/' + deviceNum);
 
-    // console.log(dbRef);
+    dbRef.on('value', snap => {
+        console.log(snap.val()[deviceNum]);
+    });
 }
+
 
 
 console.log(dbRef);
 
-dbRef.on('value', snap => {
-    console.log(snap.val()[deviceNum]);
-});
+
 
 
 // const dbRef = firebase.database().ref().child('devices/' + deviceNum);
