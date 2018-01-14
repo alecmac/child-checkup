@@ -41,9 +41,9 @@ function savePatientInfo()
 function initPatientStatus(device_num, patient_name, room_num, time)
 {
 	const promise2 = firebase.database().ref().child('devices/' + device_num).set({
-		patient_name: patient_name,
+		patient: patient_name,
 		status: "N/A",
-		room_num: room_num,
+		room: room_num,
 		time: time
 	});
 	
