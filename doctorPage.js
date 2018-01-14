@@ -3,12 +3,11 @@ const txtEmail = document.getElementById('txtEmail');
 const txtPassword = document.getElementById('txtPassword');
 const btnLogin = document.getElementById('btnLogin');
 const btnLogout = document.getElementById('btnLogout');
-const statusHeader = document.getElementById('status');
 
 const login_inputs = document.getElementById('login_inputs');
 const child_status = document.getElementById('child_status');
 
-const dbRef = firebase.database().ref().child('child');
+const dbRef = firebase.database().ref().child('devices');
 
 // add login event
 btnLogin.addEventListener('click', e => {
@@ -42,5 +41,20 @@ firebase.auth().onAuthStateChanged(firebaseUser => {
 });
 
 dbRef.on('value', snap => {
-  statusHeader.innerHTML = "Child Status: " + snap.val().status;
+  for(var i = 1; i < snap.val().length; i++) {
+    var name = snap.val()[i].name;
+    var room = snap.val()[i].room;
+    var status = snap.val()[i].status;
+
+    document.getElementById('device' + i).innerHTML =
+        "<b>Child Name:</b> " + name +
+        "<br><b>Status:</b> " + status +
+        "<br><b>Room Number:</b> " + room +
+        "<br><b>Device Number:</b> " + i;
+
+    if(status == "help") {
+      document.getElementById('devicec' + i).style.background = "#A30606";
+    }
+  }
+
 });
