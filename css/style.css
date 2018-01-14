@@ -1,3 +1,33 @@
-.template {
-    display: none;
-}
+.navbar {
+    margin-bottom: 0;
+    border-radius: 0;
+    color: #FFF;
+    background: #1A1A1A;
+    padding: 0.5% 0;
+    font-size: 1.2em;
+    border: 0;
+  }
+  .card {
+    box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
+    transition: 0.3s;
+  }
+  .card:hover {
+    box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2);
+  }
+  /* .navbar-brand {
+    float: left;
+    padding: 0 15px 15px;
+    min-height: 55px;
+  } */
+  .navbar-inverse .navbar-nav .active a, .navbar-inverse .navbar-nav a:focus,
+  .navbar-inverse .navbar-nav .active a:hover {
+    color: #FFF;
+    background-color: #1A1A1A;
+  }
+  .navbar-inverse .navbar-nav li a {
+    color: #A5A5A5;
+  }
+
+  #child_status .col-sm-4 {
+      padding: 20px 0;
+  }
