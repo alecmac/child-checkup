@@ -1,0 +1,92 @@
+<!doctype html>
+<html lang="en">
+  <head>
+
+    <title> Child Checkup </title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+    <style>
+
+      .navbar {
+        margin-bottom: 0;
+        border-radius: 0;
+        color: #FFF;
+        background: #1A1A1A;
+        padding: 0.5% 0;
+        font-size: 1.2em;
+        border: 0;
+      }
+      /* .navbar-brand {
+        float: left;
+        padding: 0 15px 15px;
+        min-height: 55px;
+      } */
+      .navbar-inverse .navbar-nav .active a, .navbar-inverse .navbar-nav a:focus,
+      .navbar-inverse .navbar-nav .active a:hover {
+        color: #FFF;
+        background-color: #1A1A1A;
+      }
+      .navbar-inverse .navbar-nav li a {
+        color: #A5A5A5;
+      }
+
+    </style>
+
+  </head>
+  <body BGCOLOR="#E5E5E5">
+
+    <nav class="navbar navbar-inverse">
+      <div class="container-fluid">
+        <div class="navbar-header">
+          <a class="navbar-brand" href="index.html" style="font-size:1.2em; color:#F2F2F2">Child Checkup</a>
+        </div>
+      </div>
+    </nav>
+
+    <div class="container">
+
+
+      <h1>
+        Parent Login
+      </h1>
+
+      <hr>
+
+      <!-- login form -->
+      <div id="login_inputs" style="padding-left:10px">
+
+        <div class="input-group" style="max-width:300px">
+          <span class="input-group-addon"><i class="glyphicon glyphicon-phone"></i></span>
+          <input id="deviceNumber" class="form-control" placeholder="Device Number">
+        </div>
+
+        <br>
+
+        <button id="btnLogin" class="btn btn-action" onclick="getDeviceNum();">Log in</button>
+        <br>
+        <a href="index.html" style="font-size:12px"> <i>Not a parent? Go back.</i> </a>
+
+      </div>
+      <!-- end of login form -->
+
+      <!-- child status form -->
+      <div id="child_status" style="padding-left:10px">
+
+        <h4 id="status"> Child Status: </h4>
+
+      </div>
+      <!-- end of child status form -->
+
+    </div>
+
+  </body>
+
+  <script src="https://www.gstatic.com/firebasejs/4.8.1/firebase.js"></script>
+  <script src="firebaseInit.js"></script>
+  <script src="./js/parentPage.js"></script>
+
+</html>
